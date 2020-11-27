@@ -6,11 +6,10 @@ let ss = document.getElementById('food');
 ss.addEventListener('click', ()=> {
 
     console.log(ss.selectedOptions.length);
-    if (ss.selectedOptions.length < 2) {
-
-        ss.setCustomValidity('Please Select at least 2 options'); //SET UP CUSTOM MESSAGE
-    } else {
+    if (ss.selectedOptions.length >= 2) {
         ss.setCustomValidity('');
+    } else {
+        ss.setCustomValidity('Please Select at least 2 options'); //SET UP CUSTOM MESSAGE
     }
 });
 
