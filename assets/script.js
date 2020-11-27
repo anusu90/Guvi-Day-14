@@ -1,18 +1,12 @@
-let ss = document.getElementById('food');
 
 
 // WE SHALL SET UP CUSTOM VALIDATION FOR FOOD SELECTION
 // TO ENSURE AT LEAST 2 OPTIONS ARE SLECTED
-
+let ss = document.getElementById('food');
 ss.addEventListener('click', ()=> {
 
     console.log(ss.selectedOptions.length);
-    if( ss.selectedIndex === -1){
-
-        ss.setCustomValidity('Please Select at least 2 options'); //SET UP CUSTOM MESSAGE
-        console.log('here')
-
-    } else if (ss.selectedOptions.length < 2) {
+    if (ss.selectedOptions.length < 2) {
 
         ss.setCustomValidity('Please Select at least 2 options'); //SET UP CUSTOM MESSAGE
     } else {
@@ -20,20 +14,20 @@ ss.addEventListener('click', ()=> {
     }
 });
 
-form = document.getElementById('my-form');
+let form = document.getElementById('my-form');
 
 //ADD EVENT LISTENER ON FORM
 
-form.addEventListener('submit', (e)=>{
+form.addEventListener('submit', (e) => {
 
-    e.preventDefault(); // PREVENT DEFAULT
+    e.preventDefault();
     formData = new FormData(form);
-
-    // USE ARRAY DESTRUCTUING TO LOOP THROUGH THE ELEMENTS OF FORMDATA AND APPEND THEM TO TBODY
-    // USING .append METHOD.
 
     //CLEAR EXISTING COLS OF THE TABLE
     document.getElementById('input-cols').childNodes.forEach(v => (v.innerHTML = ''));
+
+    // USE ARRAY DESTRUCTUING TO LOOP THROUGH THE ELEMENTS OF FORMDATA AND APPEND THEM TO TBODY
+    // USING .append METHOD.
 
     for ([k,v] of formData){
         e = document.getElementById(k);
@@ -47,4 +41,6 @@ form.addEventListener('submit', (e)=>{
     //NOW WE RESET THE FORM
     form.reset();
 
-})
+});
+
+    
